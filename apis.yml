@@ -1,0 +1,7 @@
+aid: ace-hardware
+url: https://raw.githubusercontent.com/api-evangelist/ace-hardware/refs/heads/main/apis.yml
+modified: '2026-03-21'
+apis: []
+common:
+  - type: Website
+    url: https://www.ace-hardware.com
