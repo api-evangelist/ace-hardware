@@ -1,7 +1,12 @@
 aid: ace-hardware
-url: https://raw.githubusercontent.com/api-evangelist/ace-hardware/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/ace-hardware/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis: []
 common:
   - type: Website
     url: https://www.ace-hardware.com
+description: >-
+  Ace Hardware is a retailer-owned hardware cooperative operating thousands of independently
+  owned stores worldwide that sell hardware, tools, paint, lawn and garden, and home
+  improvement products.
