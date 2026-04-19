@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ace-hardware/refs/heads/main/json-schema/ace-hardware-edi-purchase-order-schema.json",
+  "title": "AceHardwareEdiPurchaseOrder",
+  "description": "An Ace Hardware EDI 850 Purchase Order representing a vendor purchase order from Ace Hardware's distribution system.",
+  "type": "object",
+  "properties": {
+    "poNumber": {
+      "type": "string",
+      "description": "Purchase order number assigned by Ace Hardware",
+      "example": "PO-2026-001234"
+    },
+    "orderDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the purchase order was created",
+      "example": "2026-04-19"
+    },
+    "shipByDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Required ship-by date for the order",
+      "example": "2026-04-30"
+    },
+    "vendorId": {
+      "type": "string",
+      "description": "Ace Hardware vendor identifier",
+      "example": "VND-00987"
+    },
+    "vendorName": {
+      "type": "string",
+      "description": "Name of the vendor fulfilling the order",
+      "example": "Hardware Supplier Corp."
+    },
+    "shipToAddress": {
+      "type": "object",
+      "description": "Destination distribution center or store address",
+      "properties": {
+        "name": {"type": "string", "example": "Ace Hardware DC - Chicago"},
+        "address1": {"type": "string", "example": "1000 Distribution Way"},
+        "city": {"type": "string", "example": "Chicago"},
+        "state": {"type": "string", "example": "IL"},
+        "zip": {"type": "string", "example": "60601"},
+        "country": {"type": "string", "example": "US"}
+      }
+    },
+    "lineItems": {
+      "type": "array",
+      "description": "List of products ordered",
+      "items": {
+        "$ref": "#/$defs/LineItem"
+      }
+    },
+    "totalAmount": {
+      "type": "number",
+      "description": "Total order value in USD",
+      "example": 15420.50
+    },
+    "currency": {
+      "type": "string",
+      "description": "Currency code",
+      "example": "USD"
+    }
+  },
+  "required": ["poNumber", "orderDate", "vendorId", "lineItems"],
+  "$defs": {
+    "LineItem": {
+      "type": "object",
+      "description": "A single line item in a purchase order",
+      "properties": {
+        "lineNumber": {"type": "integer", "description": "Sequential line item number", "example": 1},
+        "upc": {"type": "string", "description": "Universal Product Code", "example": "012345678901"},
+        "vendorSku": {"type": "string", "description": "Vendor's product SKU", "example": "SKU-HAMMER-16OZ"},
+        "aceItemNumber": {"type": "string", "description": "Ace Hardware internal item number", "example": "4082165"},
+        "description": {"type": "string", "description": "Product description", "example": "16 oz Claw Hammer"},
+        "quantity": {"type": "integer", "description": "Quantity ordered", "example": 48},
+        "unitCost": {"type": "number", "description": "Cost per unit in USD", "example": 12.99},
+        "extendedCost": {"type": "number", "description": "Total line cost (quantity x unitCost)", "example": 623.52}
+      },
+      "required": ["lineNumber", "upc", "quantity", "unitCost"]
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "referralId": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "affiliateId": "AFF-500123",
+  "affiliateName": "Home Improvement Blog",
+  "referralUrl": "https://www.homeimprovementblog.com/best-hammers",
+  "destinationUrl": "https://www.acehardware.com/departments/tools/hand-tools/hammers",
+  "clickDate": "2026-04-19T10:30:00Z",
+  "conversionDate": "2026-04-19T11:15:00Z",
+  "orderId": "ORD-2026-789012",
+  "orderValue": 89.97,
+  "commissionRate": 4.5,
+  "commissionAmount": 4.05,
+  "status": "Approved"
+}

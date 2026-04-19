@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ace-hardware/refs/heads/main/json-schema/ace-hardware-affiliate-referral-schema.json",
+  "title": "AceHardwareAffiliateReferral",
+  "description": "An affiliate referral event tracking a publisher's referral of a customer to acehardware.com via the Impact affiliate network.",
+  "type": "object",
+  "properties": {
+    "referralId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for this referral event",
+      "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+    },
+    "affiliateId": {
+      "type": "string",
+      "description": "Impact affiliate account identifier",
+      "example": "AFF-500123"
+    },
+    "affiliateName": {
+      "type": "string",
+      "description": "Name of the affiliate publisher",
+      "example": "Home Improvement Blog"
+    },
+    "referralUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL of the affiliate's referring page",
+      "example": "https://www.homeimprovementblog.com/best-hammers"
+    },
+    "destinationUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "Ace Hardware product page the customer was referred to",
+      "example": "https://www.acehardware.com/departments/tools/hand-tools/hammers"
+    },
+    "clickDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the affiliate link was clicked",
+      "example": "2026-04-19T10:30:00Z"
+    },
+    "conversionDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date and time the purchase was completed",
+      "example": "2026-04-19T11:15:00Z"
+    },
+    "orderId": {
+      "type": "string",
+      "description": "Ace Hardware order identifier from the converted sale",
+      "example": "ORD-2026-789012"
+    },
+    "orderValue": {
+      "type": "number",
+      "description": "Total order value in USD",
+      "example": 89.97
+    },
+    "commissionRate": {
+      "type": "number",
+      "description": "Commission percentage earned by the affiliate",
+      "example": 4.5
+    },
+    "commissionAmount": {
+      "type": "number",
+      "description": "Commission amount earned in USD",
+      "example": 4.05
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of the commission",
+      "enum": ["Pending", "Approved", "Rejected", "Paid"],
+      "example": "Approved"
+    }
+  },
+  "required": ["referralId", "affiliateId", "clickDate"]
+}

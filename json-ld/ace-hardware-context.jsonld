@@ -1,0 +1,125 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "ace": "https://www.acehardware.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "AceHardwareAffiliateReferral": "ace:AceHardwareAffiliateReferral",
+    "AceHardwareEdiPurchaseOrder": "ace:AceHardwareEdiPurchaseOrder",
+    "aceItemNumber": {
+      "@id": "ace:aceItemNumber",
+      "@type": "xsd:string"
+    },
+    "affiliateId": {
+      "@id": "ace:affiliateId",
+      "@type": "xsd:string"
+    },
+    "affiliateName": {
+      "@id": "ace:affiliateName",
+      "@type": "xsd:string"
+    },
+    "clickDate": {
+      "@id": "ace:clickDate",
+      "@type": "xsd:dateTime"
+    },
+    "commissionAmount": {
+      "@id": "ace:commissionAmount",
+      "@type": "xsd:decimal"
+    },
+    "commissionRate": {
+      "@id": "ace:commissionRate",
+      "@type": "xsd:decimal"
+    },
+    "conversionDate": {
+      "@id": "ace:conversionDate",
+      "@type": "xsd:dateTime"
+    },
+    "currency": {
+      "@id": "ace:currency",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "destinationUrl": {
+      "@id": "ace:destinationUrl",
+      "@type": "@id"
+    },
+    "extendedCost": {
+      "@id": "ace:extendedCost",
+      "@type": "xsd:decimal"
+    },
+    "lineItems": {
+      "@id": "ace:lineItems",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "lineNumber": {
+      "@id": "ace:lineNumber",
+      "@type": "xsd:integer"
+    },
+    "orderDate": {
+      "@id": "ace:orderDate",
+      "@type": "xsd:date"
+    },
+    "orderId": {
+      "@id": "ace:orderId",
+      "@type": "xsd:string"
+    },
+    "orderValue": {
+      "@id": "ace:orderValue",
+      "@type": "xsd:decimal"
+    },
+    "poNumber": {
+      "@id": "ace:poNumber",
+      "@type": "xsd:string"
+    },
+    "quantity": {
+      "@id": "ace:quantity",
+      "@type": "xsd:integer"
+    },
+    "referralId": {
+      "@id": "ace:referralId",
+      "@type": "xsd:string"
+    },
+    "referralUrl": {
+      "@id": "ace:referralUrl",
+      "@type": "@id"
+    },
+    "shipByDate": {
+      "@id": "ace:shipByDate",
+      "@type": "xsd:date"
+    },
+    "shipToAddress": {
+      "@id": "ace:shipToAddress",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "ace:status",
+      "@type": "xsd:string"
+    },
+    "totalAmount": {
+      "@id": "ace:totalAmount",
+      "@type": "xsd:decimal"
+    },
+    "unitCost": {
+      "@id": "ace:unitCost",
+      "@type": "xsd:decimal"
+    },
+    "upc": {
+      "@id": "ace:upc",
+      "@type": "xsd:string"
+    },
+    "vendorId": {
+      "@id": "ace:vendorId",
+      "@type": "xsd:string"
+    },
+    "vendorName": {
+      "@id": "ace:vendorName",
+      "@type": "xsd:string"
+    },
+    "vendorSku": {
+      "@id": "ace:vendorSku",
+      "@type": "xsd:string"
+    }
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ace-hardware/refs/heads/main/json-structure/ace-hardware-edi-purchase-order-structure.json",
+  "name": "AceHardwareEdiPurchaseOrder",
+  "description": "An Ace Hardware EDI 850 Purchase Order representing a vendor purchase order from Ace Hardware's distribution system.",
+  "type": "object",
+  "properties": {
+    "poNumber": {
+      "type": "string",
+      "description": "Purchase order number assigned by Ace Hardware",
+      "example": "PO-2026-001234"
+    },
+    "orderDate": {
+      "type": "date",
+      "description": "Date the purchase order was created",
+      "example": "2026-04-19"
+    },
+    "shipByDate": {
+      "type": "date",
+      "description": "Required ship-by date for the order",
+      "example": "2026-04-30"
+    },
+    "vendorId": {
+      "type": "string",
+      "description": "Ace Hardware vendor identifier",
+      "example": "VND-00987"
+    },
+    "vendorName": {
+      "type": "string",
+      "description": "Name of the vendor fulfilling the order",
+      "example": "Hardware Supplier Corp."
+    },
+    "shipToAddress": {
+      "type": "object",
+      "description": "Destination distribution center or store address",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Ace Hardware DC - Chicago"
+        },
+        "address1": {
+          "type": "string",
+          "example": "1000 Distribution Way"
+        },
+        "city": {
+          "type": "string",
+          "example": "Chicago"
+        },
+        "state": {
+          "type": "string",
+          "example": "IL"
+        },
+        "zip": {
+          "type": "string",
+          "example": "60601"
+        },
+        "country": {
+          "type": "string",
+          "example": "US"
+        }
+      }
+    },
+    "lineItems": {
+      "type": "array",
+      "description": "List of products ordered",
+      "items": {
+        "$ref": "#/$defs/LineItem"
+      }
+    },
+    "totalAmount": {
+      "type": "double",
+      "description": "Total order value in USD",
+      "example": 15420.5
+    },
+    "currency": {
+      "type": "string",
+      "description": "Currency code",
+      "example": "USD"
+    }
+  },
+  "required": [
+    "poNumber",
+    "orderDate",
+    "vendorId",
+    "lineItems"
+  ]
+}

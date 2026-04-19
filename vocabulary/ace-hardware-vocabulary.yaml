@@ -1,0 +1,186 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: Ace Hardware
+  description: >-
+    Vocabulary taxonomy for Ace Hardware's retail operations, covering EDI vendor
+    integration, affiliate program referrals, and retail commerce. Includes the
+    language of cooperative hardware retail, supply chain management, and digital
+    affiliate marketing.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - name: Ace Hardware Affiliate Program
+      namespace: ace-affiliate
+      version: "current"
+      baseUrl: https://www.acehardware.com/affiliates
+      status: active
+    - name: Ace Hardware Vendor EDI Integration
+      namespace: ace-edi
+      version: "X12-4010"
+      baseUrl: https://www.acehardware-vendors.com/
+      status: active
+    - name: Ace Hardware Retail Commerce
+      namespace: ace-retail
+      version: "current"
+      baseUrl: https://www.acehardware.com/
+      status: active
+
+  resources:
+    - name: Affiliate Referral
+      description: A tracked referral from a publisher to acehardware.com resulting in a potential commission
+      api: ace-affiliate
+      actions: [track, report, list]
+    - name: Purchase Order
+      description: An EDI 850 purchase order from Ace Hardware to a vendor
+      api: ace-edi
+      actions: [receive, acknowledge, fulfill]
+    - name: Advanced Ship Notice
+      description: An EDI 856 notification from a vendor to Ace Hardware documenting a shipment
+      api: ace-edi
+      actions: [send, confirm]
+    - name: Invoice
+      description: An EDI 810 invoice from a vendor to Ace Hardware for fulfilled orders
+      api: ace-edi
+      actions: [send, validate, process]
+    - name: Product Listing
+      description: An Ace Hardware product page on acehardware.com
+      api: ace-retail
+      actions: [browse, search, view]
+    - name: Store
+      description: An independently owned Ace Hardware retail location
+      api: ace-retail
+      actions: [search, locate]
+    - name: Commission
+      description: A payment earned by an affiliate for a successful referral purchase
+      api: ace-affiliate
+      actions: [calculate, approve, pay]
+
+  actions:
+    - verb: track
+      description: Record and attribute an affiliate click or conversion
+      pattern: write
+    - verb: receive
+      description: Accept an EDI transaction from Ace Hardware
+      pattern: read
+    - verb: send
+      description: Transmit an EDI transaction to Ace Hardware
+      pattern: write
+    - verb: fulfill
+      description: Process and ship products against a purchase order
+      pattern: write
+    - verb: report
+      description: Generate commission or sales reports
+      pattern: read
+    - verb: search
+      description: Search for products or store locations
+      pattern: read
+    - verb: browse
+      description: Navigate product categories and listings
+      pattern: read
+
+  schemas:
+    core:
+      - AceHardwareEdiPurchaseOrder
+      - AceHardwareAffiliateReferral
+    supply-chain:
+      - LineItem
+    affiliate:
+      - Commission
+
+  parameters:
+    identifiers:
+      - name: vendorId
+        description: Ace Hardware vendor identifier
+      - name: poNumber
+        description: Purchase order number
+      - name: upc
+        description: Universal Product Code for products
+      - name: affiliateId
+        description: Impact affiliate account identifier
+    filters:
+      - name: status
+        description: Filtering by order, shipment, or commission status
+      - name: orderDate
+        description: Filter orders by date range
+      - name: category
+        description: Product category filter
+
+  enums:
+    commissionStatus:
+      - Pending
+      - Approved
+      - Rejected
+      - Paid
+    ediTransactions:
+      - "850 Purchase Order"
+      - "856 Advanced Ship Notice"
+      - "810 Invoice"
+      - "820 Payment/Remittance"
+      - "864 Text Message"
+      - "812 Credit/Debit Adjustment"
+
+  authentication:
+    schemes:
+      - type: AS2
+        description: EDI transactions transmitted via AS2 secure connection
+      - type: Impact OAuth
+        description: Impact affiliate platform OAuth 2.0 for affiliate API access
+    notes: No public REST API is available. EDI uses AS2; affiliate data accessed via Impact network.
+
+capability:
+  workflows:
+    - name: Vendor Supply Chain
+      description: Managing purchase orders, ship notices, and invoices between Ace Hardware and vendors via EDI
+      apis: [Ace Hardware Vendor EDI Integration]
+      personas: [Vendor, Supplier, EDI Analyst]
+    - name: Affiliate Revenue
+      description: Earning commissions by referring customers to acehardware.com through content and product links
+      apis: [Ace Hardware Affiliate Program]
+      personas: [Content Creator, Blogger, Comparison Shopping Site]
+
+  personas:
+    - id: vendor
+      name: Vendor
+      description: Hardware or home improvement manufacturer/distributor supplying products to Ace Hardware
+      workflows: [Vendor Supply Chain]
+    - id: edi-analyst
+      name: EDI Analyst
+      description: Technical specialist managing EDI transaction compliance for a vendor
+      workflows: [Vendor Supply Chain]
+    - id: affiliate
+      name: Affiliate Publisher
+      description: Content creator or comparison site earning commissions from Ace Hardware referrals
+      workflows: [Affiliate Revenue]
+
+  domains:
+    - name: Hardware Retail
+      description: Physical and online retail of hardware, tools, and home improvement products
+    - name: Supply Chain Integration
+      description: EDI-based vendor integration for purchase orders, fulfillment, and invoicing
+    - name: Affiliate Marketing
+      description: Commission-based publisher referral program for online sales
+
+crossReference:
+  - resource: Purchase Order
+    operations: [receive, acknowledge, fulfill]
+    workflows: [Vendor Supply Chain]
+    personas: [Vendor, EDI Analyst]
+  - resource: Advanced Ship Notice
+    operations: [send, confirm]
+    workflows: [Vendor Supply Chain]
+    personas: [Vendor, EDI Analyst]
+  - resource: Invoice
+    operations: [send, validate, process]
+    workflows: [Vendor Supply Chain]
+    personas: [Vendor, EDI Analyst]
+  - resource: Affiliate Referral
+    operations: [track, report]
+    workflows: [Affiliate Revenue]
+    personas: [Affiliate Publisher]
+  - resource: Commission
+    operations: [calculate, approve, pay]
+    workflows: [Affiliate Revenue]
+    personas: [Affiliate Publisher]
