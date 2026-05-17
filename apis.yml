@@ -164,7 +164,7 @@ common:
         description: >-
           Tradeshift provides invoice and payment processing integration for
           Ace Hardware's AP automation workflows.
-  - type: JSON-LD
+  - type: JSONLD
     url: >-
       https://raw.githubusercontent.com/api-evangelist/ace-hardware/refs/heads/main/json-ld/ace-hardware-context.jsonld
     title: Ace Hardware JSON-LD Context
