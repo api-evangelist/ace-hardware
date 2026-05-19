@@ -91,6 +91,8 @@ apis:
       - type: Documentation
         url: https://www.acehardware.com/
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/acehardwarecorp
   - type: Website
     url: https://www.acehardware.com
   - type: Portal
