@@ -33,7 +33,7 @@ description: >-
   digital publishers to earn commissions on online sales at acehardware.com.
 created: '2025-01-01'
 modified: '2026-04-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: ace-hardware:affiliate-program
     name: Ace Hardware Affiliate Program
