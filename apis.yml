@@ -24,6 +24,15 @@ tags:
   - Paint
   - Cooperative
   - EDI
+  - Affiliates
+tags_raw:
+  - Retail
+  - Hardware
+  - Home Improvement
+  - Tools
+  - Paint
+  - Cooperative
+  - EDI
   - Affiliate
 description: >-
   Ace Hardware is a retailer-owned hardware cooperative operating thousands of
@@ -47,6 +56,11 @@ apis:
     humanURL: https://www.acehardware.com/affiliates
     baseURL: https://www.acehardware.com
     tags:
+      - Affiliates
+      - Commission
+      - Publishers
+      - Impact
+    tags_raw:
       - Affiliate
       - Commission
       - Publisher
