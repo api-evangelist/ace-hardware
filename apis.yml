@@ -52,7 +52,7 @@ description: >-
   provides vendor integration through EDI standards and an affiliate program for
   digital publishers to earn commissions on online sales at acehardware.com.
 created: '2025-01-01'
-modified: '2026-04-19'
+modified: '2026-08-30'
 specificationVersion: '0.23'
 apis:
   - aid: ace-hardware:affiliate-program
@@ -82,6 +82,11 @@ apis:
       - type: Documentation
         url: https://www.acehardware.com/affiliate-faq
         title: Affiliate Program FAQ
+      - type: SignUp
+        url: https://app.impact.com/campaign-mediapartner-signup/Ace-Hardware.brand?type=dm
+        title: >-
+          Affiliate media-partner application. The programme runs on the Impact network, so the
+          signup is on impact.com by design — acehardware.com/affiliates links it directly.
   - aid: ace-hardware:vendor-edi
     name: Ace Hardware Vendor EDI Integration
     description: >-
@@ -109,6 +114,16 @@ apis:
       - type: Documentation
         url: https://www.spscommerce.com/network/find-a-partner/view/ace-hardware/
         title: Ace Hardware EDI via SPS Commerce
+      - type: APIReference
+        url: https://support.logicbroker.com/kb/acehardware/37566558082836-Ace-Hardware-EDI-Specifications
+        title: >-
+          Ace Hardware EDI Specifications — the transaction set list (850/856/810/820/864), the
+          stage and production EDI IDs, and six downloadable X12 mapping PDFs. Served from Ace
+          Hardware's own branded supplier portal on Logicbroker, the EDI platform Ace contracted
+          to run vendor onboarding; the requirements are Ace's, not Logicbroker's product.
+      - type: Documentation
+        url: https://www.acehardware-vendors.com/Vendors%20Public/Documents/Ace%20Vendor%20Manual.pdf
+        title: Ace Hardware Vendor Manual (PDF) — AS2 transport, certificates, 12-hour 997 acknowledgement, 95% OTIF
   - aid: ace-hardware:retail-commerce
     name: Ace Hardware Retail Commerce
     description: >-
@@ -130,16 +145,45 @@ apis:
 common:
   - type: DomainSecurity
     url: security/ace-hardware-domain-security.yml
+  - type: LLMsTxt
+    url: https://www.acehardware.com/llms.txt
+    title: >-
+      Ace Hardware llms.txt — published by the provider at the site root, harvested verbatim to
+      llms/ace-hardware-llms.txt on 2026-08-30 (HTTP 200, text/plain, last-modified 2026-05-15).
+      All 45 links it advertises were probed and all 45 returned 200.
+  - type: Authentication
+    url: authentication/ace-hardware-authentication.yml
+    title: Ace Hardware Authentication Profile (AS2 certificate, vendor portal, Impact affiliate account)
+  - type: Conformance
+    url: conformance/ace-hardware-conformance.yml
+    title: Ace Hardware Conformance — X12 EDI 4010 over AS2, and the web-API standards it does not implement
+  - type: Conventions
+    url: conventions/ace-hardware-conventions.yml
+    title: Ace Hardware Integration Conventions — acknowledgement, document matching, reversibility
+  - type: Lifecycle
+    url: lifecycle/ace-hardware-lifecycle.yml
+    title: Ace Hardware Lifecycle — X12 4010 versioning, no deprecation policy, no status page
+  - type: Packages
+    url: packages/ace-hardware-packages.yml
+    title: Ace Hardware Packages — measured zero, no first-party SDK on any registry
+  - type: Support
+    url: https://www.acehardware.com/customer-service
+    title: Ace Hardware Customer Service Hub
+  - type: Blog
+    url: https://www.acehardware.com/tips/
+    title: Ace Hardware Tips & Advice — editorial how-to and project articles
+  - type: News
+    url: https://newsroom.acehardware.com/
+    title: Ace Hardware Newsroom — corporate press releases (not an integration changelog)
   - type: LinkedIn
     url: https://www.linkedin.com/company/acehardwarecorp
   - type: Website
     url: https://www.acehardware.com
-  - type: Portal
-    url: https://www.acehardware.com/
   - type: PrivacyPolicy
     url: https://www.acehardware.com/privacy-policy
   - type: TermsOfService
-    url: https://www.acehardware.com/legal-notices
+    url: https://www.acehardware.com/customer-service?page=terms-of-use
+    title: Ace Hardware Terms of Use
   - type: Features
     data:
       - name: Retailer-Owned Cooperative Model
@@ -216,3 +260,8 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-30'
+  status: enriched
+  artifacts_added: 7
+  pass: local-v1

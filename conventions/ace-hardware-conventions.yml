@@ -1,0 +1,148 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://www.acehardware-vendors.com/Vendors%20Public/Documents/Ace%20Vendor%20Manual.pdf,
+  https://support.logicbroker.com/kb/acehardware/37566558082836-Ace-Hardware-EDI-Specifications
+provider: Ace Hardware
+providerId: ace-hardware
+description: >-
+  Cross-cutting runtime semantics for the Ace Hardware integration surface. Ace Hardware's only
+  documented machine-to-machine contract is X12 EDI over AS2, so these conventions describe an
+  EDI trading-partner relationship rather than an HTTP API: there is no pagination, no request-id
+  header, no rate-limit signal and no JSON error envelope, because there is no HTTP API to carry
+  them. The conventions that DO exist — acknowledgement timing, document matching, exception
+  reporting — are real and published, and they are what an integrating agent actually has to obey.
+
+auth_style:
+  model: certificate-based AS2 message signing and encryption
+  detail: >-
+    X.509 certificates exchanged at trading-partner setup, SHA2 preferred. See
+    authentication/ace-hardware-authentication.yml.
+  self_service: false
+
+idempotency:
+  supported: na
+  reason: >-
+    EDI is a document-exchange protocol, not a request/response API, so there is no idempotency
+    key mechanism. Duplicate suppression is handled by the interchange/group/transaction control
+    numbers in the X12 envelope (ISA13/GS06/ST02), which a receiver uses to detect a repeat, but
+    Ace Hardware does not publish a stated duplicate-handling policy. No `Idempotency` pointer is
+    emitted — asserting one here would credit Ace with a guarantee it has not made.
+
+dry_run_mode:
+  supported: documented
+  detail: >-
+    Ace Hardware runs a distinct STAGE trading-partner identity (ZZ/7089906600) separate from
+    PRODUCTION (01/006928311). A vendor tests the full document set against the stage identity
+    before being certified for production traffic, which is the EDI equivalent of a sandbox.
+  source: https://support.logicbroker.com/kb/acehardware/37566558082836-Ace-Hardware-EDI-Specifications
+
+reversibility:
+  grade: documented
+  write_surface: true
+  detail: >-
+    Ace Hardware's write surface is inbound EDI: a vendor sends 856 Advance Ship Notices and 810
+    Invoices against an 850 Purchase Order. A reversal path exists and is published in outline —
+    exceptions on an 810 are returned to the vendor as an X12 864 text message ("864 exceptions
+    guide for 810"), and the 812 Credit/Debit Adjustment is the document that reverses or corrects
+    an invoice amount. What is NOT published anywhere we could read is the WINDOW: no page states
+    how long after an 810 a correction may be submitted, or by when a rejected document must be
+    re-sent. The grade is therefore `documented` (reversal path exists) and not `verified` (no
+    stated window). NO WINDOW IS ASSERTED HERE because Ace Hardware states none.
+  operations:
+    - action: Invoice (810) correction / adjustment
+      reversal: X12 812 Credit/Debit Adjustment
+      window: null
+      window_source: null
+      note: >-
+        812 is named as part of Ace's core document set in third-party supplier-compliance
+        guidance; it is not on the Logicbroker specification page we read. Recorded as reported,
+        not confirmed first-party.
+    - action: Invoice (810) rejected by Ace
+      reversal: X12 864 exception message returned to vendor, vendor re-submits a corrected 810
+      window: null
+      window_source: null
+      published_guide: '864 exceptions guide for 810.pdf'
+    - action: Advance Ship Notice (856) error
+      reversal: X12 864 exception message (Vendor Knowledge Series EDI 864 for ASN)
+      window: null
+      window_source: null
+
+pagination:
+  supported: na
+  reason: No HTTP collection endpoints exist.
+
+field_expansion:
+  supported: na
+
+metadata:
+  supported: na
+
+request_id_tracing:
+  supported: partial
+  mechanism: X12 envelope control numbers
+  detail: >-
+    ISA13 (interchange control number), GS06 (group control number) and ST02 (transaction set
+    control number) are the correlation identifiers a partner uses to trace a document through
+    Ace's systems and to match an inbound 997 acknowledgement to the document it acknowledges.
+    These are X12 standard fields, not an Ace-specific convention.
+
+versioning:
+  scheme: X12 release version
+  current: '4010'
+  detail: >-
+    Ace Hardware transacts on X12 version 4010. No version negotiation, no version header, and no
+    published migration path to a newer X12 release (5010 or later).
+  source: https://www.acehardware-vendors.com/
+
+error_envelope:
+  shape: X12 864 Text Message
+  detail: >-
+    Ace Hardware does not return HTTP status codes or a problem+json body. Document-level
+    exceptions are reported back to the vendor as an X12 864, with published guides for the 810
+    and ASN cases. Transport-level failures surface as AS2 MDN failures.
+  catalog_published: false
+  catalog_note: >-
+    The 864 exception guides are PDFs. There is no enumerated, machine-readable error/exception
+    code registry, so errors/ace-hardware-problem-types.yml is NOT written — there are no codes
+    to catalog without fabricating them.
+
+acknowledgement:
+  required: true
+  document: X12 997 Functional Acknowledgement
+  window: 12 hours
+  detail: >-
+    Upon receipt of an electronic document from Ace Hardware, the vendor must transmit an
+    electronic acknowledgement within 12 hours certifying that the document has been properly
+    received.
+  source: https://www.acehardware-vendors.com/Vendors%20Public/Documents/Ace%20Vendor%20Manual.pdf
+
+document_matching:
+  rule: >-
+    The order (850) must exactly match the ASN (856) and the Invoice (810). Mismatches create
+    inefficiencies in invoice payment and are a scorecard failure point.
+  source: https://www.acehardware-vendors.com/Vendors%20Public/Documents/Ace%20Vendor%20Manual.pdf
+
+service_levels:
+  - name: OTIF
+    target: 95%
+    detail: >-
+      Documents and shipments must meet Ace Hardware's 95% On-Time-In-Full benchmark to avoid
+      vendor scorecard penalties and chargebacks.
+
+rate_limit_signaling:
+  supported: na
+  reason: >-
+    AS2 document exchange carries no rate-limit headers and Ace Hardware publishes no throughput
+    ceiling. See rate-limits/ace-hardware-rate-limits.yml.
+
+cross_links:
+  authentication: authentication/ace-hardware-authentication.yml
+  conformance: conformance/ace-hardware-conformance.yml
+  lifecycle: lifecycle/ace-hardware-lifecycle.yml
+  rate_limits: rate-limits/ace-hardware-rate-limits.yml
+  plans: plans/ace-hardware-plans-pricing.yml
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

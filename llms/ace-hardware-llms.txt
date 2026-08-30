@@ -1,0 +1,73 @@
+# Ace Hardware
+
+> Ace Hardware is a retailer-owned hardware cooperative with more than 5,000 locally owned and operated stores across all 50 U.S. states and 70+ countries. Stores stock paint, tools, lawn and garden equipment, plumbing and electrical supplies, grills, outdoor living, and seasonal goods, and are known for in-store services like paint matching, key cutting, propane exchange, and small-engine repair. Most stores are independently owned, so inventory, services, and hours vary by location — the Store Locator is the authoritative source for what a specific store carries and offers.
+
+## About
+
+- [About Ace Hardware](https://www.acehardware.com/about-us ): Cooperative model, history (founded 1924), and "The Helpful Place" brand positioning.
+- [Community Involvement](https://www.acehardware.com/community-involvement ): Children's Miracle Network partnership and local store giving programs.
+- [Careers](https://careers.acehardware.com/ ): Corporate and store-level roles; store hiring is handled by individual owners.
+
+## Stores & Services
+
+- [Store Locator](https://www.acehardware.com/store-locator ): Find local Ace stores by ZIP code; canonical source for store-specific hours, inventory, and services.
+- [Propane Refill & Exchange Locator](https://www.acehardware.com/store-locator?service=Propane%20Refill%20or%20Exchange ): Stores offering propane tank refill or exchange.
+- [The Paint Studio](https://www.acehardware.com/thepaintstudio ): In-store paint matching and color consultation; carries Benjamin Moore, Clark+Kensington, Magnolia Home, Royal, and Valspar.
+- [Customer Service Hub](https://www.acehardware.com/customer-service ): Index of policies and store-services pages (returns, delivery, assembly, haul-away, recalls).
+- [Free Store Pickup](https://www.acehardware.com/customer-service?page=free-store-pickup-curbside ): Order online, pick up in-store; curbside available at participating stores.
+- [Delivery From Store](https://www.acehardware.com/customer-service?page=delivery-from-store ): Same-day local delivery from a nearby Ace.
+- [Assembly Information](https://www.acehardware.com/customer-service?page=assembly-information ): Free in-store assembly on grills, mowers, and select large items.
+- [30-Day Return Policy](https://www.acehardware.com/customer-service?page=30-day-return-policy ): Standard return window and exclusions.
+
+## Membership & Programs
+
+- [Ace Rewards](https://www.acehardware.com/ace-rewards ): Free loyalty program with points on purchases, member coupons, and birthday rewards. (Highest-linked page on the site.)
+- [Ace Trade Credit](https://www.acehardware.com/ace-trade-credit ): Net-30 commercial account for trade pros and businesses.
+- [Ace for Business (B2B)](https://www.acehardware.com/b2b-home ): Bulk purchasing, multi-user accounts, and trade pricing.
+- [Local Ad](https://www.acehardware.com/local-ad ): Current weekly circular for the user's local store.
+- [Sales & Specials](https://www.acehardware.com/best-sales-and-specials ): Site-wide promotions and clearance.
+- [Helpful Finds](https://www.acehardware.com/helpful-finds ): Editor-curated product picks across categories.
+
+## Departments
+
+Top-level category landing pages — Ace's full assortment is organized under these eleven departments.
+
+- [Tools](https://www.acehardware.com/departments/tools ): Power tools, hand tools, accessories, storage, and workwear. Strongest in DEWALT, Milwaukee, CRAFTSMAN, DIABLO.
+- [Lawn and Garden](https://www.acehardware.com/departments/lawn-and-garden ): Mowers, trimmers, gardening tools, watering, fertilizer, outdoor power equipment. Strongest in STIHL, EGO, Scotts, Roundup.
+- [Paint and Supplies](https://www.acehardware.com/departments/paint-and-supplies ): Interior/exterior paint, primer, stain, painting tools. Brand partners: Benjamin Moore, Clark+Kensington, Magnolia Home, Valspar.
+- [Hardware](https://www.acehardware.com/departments/hardware ): Fasteners, fire safety, locks, chain, and rope.
+- [Plumbing](https://www.acehardware.com/departments/plumbing ): Fittings, fixtures, water heaters, drain care.
+- [Lighting and Electrical](https://www.acehardware.com/departments/lighting-and-electrical ): Bulbs, fixtures, smart home, wiring; brand depth in Feit.
+- [Heating and Cooling](https://www.acehardware.com/departments/heating-and-cooling ): Heaters, air conditioners, fans, thermostats.
+- [Home and Decor](https://www.acehardware.com/departments/home-and-decor ): Cleaning, small appliances, kitchen, apparel, canning.
+- [Outdoor Living](https://www.acehardware.com/departments/outdoor-living ): Grills and smokers (Weber, Traeger, Big Green Egg), patio furniture, coolers (YETI), pond supplies, sporting goods.
+- [Building Supplies](https://www.acehardware.com/departments/building-supplies ): Lumber, drywall, ladders, insulation.
+- [Automotive, RV and Marine](https://www.acehardware.com/departments/automotive-rv-and-marine ): Auto care, batteries, fluids, RV/marine accessories.
+
+## Featured Brand Hubs
+
+LLM responses already strongly associate Ace with these brands; these are the canonical brand landing pages on acehardware.com.
+
+- [Shop by Brand (index)](https://www.acehardware.com/brands )
+- [STIHL at Ace](https://www.acehardware.com/departments/lawn-and-garden/stihl ): Outdoor power equipment; Ace is a major STIHL servicing dealer.
+- [Traeger at Ace](https://www.acehardware.com/departments/outdoor-living/traeger ): Pellet grills; Ace assembles and delivers free.
+- [Weber at Ace](https://www.acehardware.com/departments/outdoor-living/weber ): Gas, charcoal, and pellet grills.
+- [Big Green Egg at Ace](https://www.acehardware.com/biggreenegg ): Authorized dealer for kamado grills and accessories.
+- [YETI at Ace](https://www.acehardware.com/departments/outdoor-living/yeti ): Coolers, drinkware, and bags.
+- [DEWALT at Ace](https://www.acehardware.com/departments/tools/dewalt ): Cordless and corded power tools.
+- [Milwaukee at Ace](https://www.acehardware.com/departments/tools/milwaukee ): M12 / M18 cordless platforms.
+- [CRAFTSMAN at Ace](https://www.acehardware.com/departments/tools/craftsman ): Hand tools, mechanic's sets, storage.
+- [DIABLO at Ace](https://www.acehardware.com/departments/tools/diablo ): Saw blades and cutting accessories.
+- [EGO at Ace](https://www.acehardware.com/departments/lawn-and-garden/ego ): Battery-powered outdoor equipment.
+
+## Tips & Advice
+
+- [Tips & Advice Hub](https://www.acehardware.com/tips/ ): Editorial how-to articles, project guides, and seasonal advice covering paint, lawn and garden, grilling, home improvement, and small repairs. Canonical answer source for "how do I..." questions about Ace product categories.
+
+## Optional
+
+- [Newsroom (corporate)](https://newsroom.acehardware.com/ ): Press releases, executive announcements, and corporate financials. Subdomain.
+- [Gift Cards](https://www.acehardware.com/gift-cards ): Physical and digital gift cards.
+- [Contact Us](https://www.acehardware.com/customer-service?page=contact-us ): General customer-care contact form.
+- [Privacy Policy](https://www.acehardware.com/customer-service?page=privacy-policy )
+- [Terms of Use](https://www.acehardware.com/customer-service?page=terms-of-use )

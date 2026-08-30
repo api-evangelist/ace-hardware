@@ -1,0 +1,67 @@
+generated: '2026-08-30'
+method: probed
+source: live GET of /.well-known/* on every apis.yml baseURL host
+provider: Ace Hardware
+providerId: ace-hardware
+description: >-
+  Record of /.well-known/ discovery probes against every host named in apis.yml. Ace Hardware
+  serves no /.well-known/ document on either host. NO WellKnown, APICatalog or SecurityTxt
+  pointer is emitted from this file: every path 404d or 500d, so this artifact records an
+  absence, not a presence.
+note: >-
+  www.acehardware.com answers 404 with the plain-text body "Page not found." on the .well-known
+  paths and 500 with a zero-length body on the two OAuth/OIDC discovery paths — the 500 is the
+  Cloudflare-fronted commerce app erroring rather than a served document. www.acehardware-vendors.com
+  is an ASP.NET application that returns its "The resource cannot be found." HTML error page for
+  every path. Neither host serves a security.txt, an api-catalog, an OpenID/OAuth discovery
+  document, an ai-plugin.json, or an A2A agent card.
+hosts:
+  - host: www.acehardware.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 500
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 500
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+  - host: www.acehardware-vendors.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,131 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://support.logicbroker.com/kb/acehardware/37566558082836-Ace-Hardware-EDI-Specifications
+  and https://www.acehardware-vendors.com/Vendors%20Public/Documents/Ace%20Vendor%20Manual.pdf
+provider: Ace Hardware
+providerId: ace-hardware
+description: >-
+  Cross-cutting and domain-standard conformance for the Ace Hardware integration surface. Ace
+  Hardware publishes no HTTP API, so the web-API standards below are all `conforms: false` with
+  the reason recorded. Its real machine-to-machine contract is ANSI ASC X12 EDI carried over AS2,
+  and that IS a domain standard with a published, versioned specification — recorded here so the
+  provider is not scored as publishing no interoperability standard when it in fact runs one of
+  the oldest ones in retail supply chain.
+note: >-
+  OWNERSHIP: the EDI specification pages are served from acehardware.logicbroker.com (301 to
+  support.logicbroker.com/kb/acehardware/), Ace Hardware's own branded supplier portal on
+  Logicbroker, the EDI platform Ace contracted to run vendor onboarding. The transaction sets,
+  EDI IDs and maps on those pages are Ace Hardware's own trading-partner requirements, not
+  Logicbroker's product. Logicbroker's OWN Commerce API (dev.logicbroker.com) is explicitly NOT
+  attributed to Ace Hardware and is not captured in this repo.
+
+conformance:
+  - id: x12-edi
+    name: ANSI ASC X12 EDI
+    conforms: true
+    version: '4010'
+    evidence:
+      - >-
+        Ace Hardware EDI Specifications (Logicbroker supplier portal) publishes the transaction
+        set list and downloadable mapping documents: 850 Orders, 856 Shipments, 810 Invoices,
+        820 Remit, 864 Text/Knowledge Document.
+      - >-
+        Six published mapping PDFs: 850DocMap.pdf, 856Map.pdf, 810map.pdf, 820DocMap.pdf,
+        864 exceptions guide for 810.pdf, Vendor Knowledge Series EDI 864 for ASN.pdf.
+      - >-
+        Published EDI qualifier/ID pairs — Stage ZZ/7089906600, Production 01/006928311.
+    url: https://support.logicbroker.com/kb/acehardware/37566558082836-Ace-Hardware-EDI-Specifications
+  - id: as2
+    name: AS2 (RFC 4130) applicability statement transport
+    conforms: true
+    evidence:
+      - >-
+        Ace Hardware offers data exchange over the internet using AS2 HTTP or HTTP/HTTPS with
+        authentication and encryption provided via certificate, preference stated as SHA2
+        (Ace Hardware Vendor Manual, acehardware-vendors.com).
+    url: https://www.acehardware-vendors.com/Vendors%20Public/Documents/Ace%20Vendor%20Manual.pdf
+  - id: x12-997
+    name: X12 997 Functional Acknowledgement
+    conforms: true
+    evidence:
+      - >-
+        Vendors must transmit an electronic acknowledgement within 12 hours of receiving an
+        electronic document from Ace Hardware, certifying the document was properly received.
+    url: https://www.acehardware-vendors.com/Vendors%20Public/Documents/Ace%20Vendor%20Manual.pdf
+  - id: openapi
+    conforms: false
+    evidence:
+      - >-
+        No OpenAPI/Swagger document at any probed location on either host. Probed 2026-08-30:
+        www.acehardware.com/openapi.json 404, /swagger.json 403 (Cloudflare interstitial),
+        /api-docs 404, www.acehardware-vendors.com/openapi.json 404.
+  - id: graphql
+    conforms: false
+    evidence:
+      - 'www.acehardware.com/graphql returned 403 (Cloudflare challenge page, not a GraphQL endpoint).'
+  - id: oauth2
+    conforms: false
+    evidence:
+      - '/.well-known/oauth-authorization-server returned 500 with a zero-length body on www.acehardware.com; 404 on www.acehardware-vendors.com. No OAuth surface is documented.'
+  - id: oidc
+    conforms: false
+    evidence:
+      - '/.well-known/openid-configuration returned 500 (zero-length) on www.acehardware.com; 404 on www.acehardware-vendors.com.'
+  - id: rfc9457
+    conforms: false
+    evidence:
+      - 'No HTTP API and therefore no problem+json error envelope. EDI errors are carried as X12 864 text messages instead.'
+  - id: rfc9727
+    name: RFC 9727 api-catalog
+    conforms: false
+    evidence:
+      - '/.well-known/api-catalog returned 404 on both hosts (probed 2026-08-30).'
+  - id: rfc9116
+    name: RFC 9116 security.txt
+    conforms: false
+    evidence:
+      - '/.well-known/security.txt returned 404 on both hosts (probed 2026-08-30).'
+
+domain_standard:
+  market: Retail / hardware and home improvement supply chain
+  standard: ANSI ASC X12 EDI 4010 over AS2
+  declared: true
+  where: >-
+    Ace Hardware's supplier-facing EDI specification pages and the Ace Vendor Manual, which name
+    the exact X12 transaction sets, the version, the AS2 transport and the trading-partner EDI IDs.
+  transaction_sets:
+    - id: '850'
+      name: Purchase Order
+    - id: '856'
+      name: Advance Ship Notice
+    - id: '810'
+      name: Invoice
+    - id: '820'
+      name: Payment Order / Remittance Advice
+    - id: '864'
+      name: Text Message (exception and knowledge documents)
+    - id: '997'
+      name: Functional Acknowledgement
+    - id: '812'
+      name: Credit/Debit Adjustment
+      note: >-
+        Named in third-party supplier-compliance write-ups as part of Ace's core document set;
+        not listed on the Logicbroker specification page we read, so recorded as reported rather
+        than confirmed first-party.
+  machine_readable: false
+  machine_readable_note: >-
+    The specifications themselves are distributed as PDF mapping documents. There is no EDIFACT/X12
+    schema, no JSON/XML rendering of the maps, and no API to fetch them. A partner cannot generate
+    a mapping from a machine-readable artifact — this is the single biggest machine-readability gap
+    in Ace Hardware's integration surface.
+
+compliance:
+  certifications: []
+  note: >-
+    No trust center, no SOC 2 / ISO 27001 / PCI attestation page, and no compliance program page
+    was found on either host. trust.acehardware.com does not resolve. No `Compliance` pointer is
+    emitted.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

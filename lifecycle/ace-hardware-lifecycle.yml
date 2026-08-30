@@ -1,0 +1,88 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://www.acehardware-vendors.com/, https://newsroom.acehardware.com/,
+  https://support.logicbroker.com/kb/acehardware/37566558082836-Ace-Hardware-EDI-Specifications
+provider: Ace Hardware
+providerId: ace-hardware
+description: >-
+  Versioning, deprecation, availability and change-communication posture for the Ace Hardware
+  integration surface. Almost every field here is a recorded absence: Ace Hardware runs a
+  long-lived X12 4010 EDI relationship with no published version policy, no deprecation policy,
+  no status page and no dated changelog. That is normal for an EDI trading-partner programme and
+  it is still a real gap for anyone building against it.
+
+versioning:
+  scheme: X12 release version
+  current_version: '4010'
+  header: null
+  negotiation: false
+  migration_path_published: false
+  note: >-
+    X12 4010 dates from 1997 and remains Ace Hardware's transacting version. No published plan to
+    move to 5010 or later was found. A vendor cannot discover a version change other than by
+    notification from Ace's EDI team.
+
+deprecation:
+  policy_published: false
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  note: >-
+    No deprecation or sunset policy is published on either host, and there is no HTTP surface on
+    which RFC 8594 Sunset/Deprecation headers could be carried. NO `Deprecation` pointer is
+    emitted.
+
+status_page:
+  present: false
+  url: null
+  probes:
+    - url: https://status.acehardware.com/
+      status: '<no DNS>'
+      note: hostname does not resolve
+    - url: https://trust.acehardware.com/
+      status: '<no DNS>'
+      note: hostname does not resolve
+  note: >-
+    No status page, uptime dashboard or incident history was found for either the retail site or
+    the vendor portal. NO `StatusPage` pointer is emitted.
+
+sla:
+  published: false
+  direction_note: >-
+    The only published service level runs the OTHER WAY: Ace Hardware imposes a 95% OTIF
+    (On-Time-In-Full) benchmark and a vendor scorecard on its suppliers, with chargebacks for
+    misses. Ace Hardware publishes no availability or response-time commitment to the vendors
+    integrating with it.
+  vendor_obligations:
+    - metric: OTIF
+      target: 95%
+    - metric: 997 functional acknowledgement
+      target: within 12 hours of receipt
+
+changelog:
+  published: false
+  note: >-
+    No dated changelog or release-notes surface exists for the integration surface.
+    newsroom.acehardware.com (200) carries corporate press releases and financial announcements,
+    not integration change notices, so it is not wired as a `ChangeLog`.
+  probed:
+    - url: https://newsroom.acehardware.com/
+      status: 200
+      verdict: corporate press releases, not an integration changelog
+
+deprecated_operations: []
+deprecated_operations_note: >-
+  Derived from openapi/ where one exists. This repo has no OpenAPI document because the provider
+  publishes none, so nothing can be derived.
+
+environments:
+  - name: stage
+    edi_id: ZZ/7089906600
+    purpose: trading-partner certification testing before production traffic is enabled
+  - name: production
+    edi_id: '01/006928311'
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

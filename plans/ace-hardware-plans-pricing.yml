@@ -3,172 +3,60 @@ specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
 provider: Ace Hardware
 providerId: ace-hardware
+generated: '2026-08-30'
+method: searched
+source: >-
+  https://www.acehardware.com/affiliates, https://www.acehardware.com/affiliate-faq,
+  https://www.acehardware-vendors.com/, https://www.acehardware.com/ace-trade-credit
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
+modified: '2026-08-30'
 tags:
   - Retail
   - Hardware
   - Home Improvement
-  - Tools
-  - Paint
   - Cooperative
   - EDI
   - Affiliate
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
-plans:
-  - id: ace-hardware-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Ace Hardware API surface. Intended for evaluation, prototyping,
-      and low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.acehardware.com
-          - https://www.acehardware-vendors.com/
-          - https://www.acehardware.com/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://www.acehardware.com
-          - https://www.acehardware-vendors.com/
-          - https://www.acehardware.com/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Ace Hardware Affiliate Program
-      - name: Ace Hardware Vendor EDI Integration
-      - name: Ace Hardware Retail Commerce
-  - id: ace-hardware-pro
-    name: Professional
-    type: paid
-    description: Production tier for Ace Hardware. Provides higher quotas, priority support, and access
-      to the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.acehardware.com
-          - https://www.acehardware-vendors.com/
-          - https://www.acehardware.com/
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://www.acehardware.com
-          - https://www.acehardware-vendors.com/
-          - https://www.acehardware.com/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://www.acehardware.com
-          - https://www.acehardware-vendors.com/
-          - https://www.acehardware.com/
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Ace Hardware Affiliate Program
-      - name: Ace Hardware Vendor EDI Integration
-      - name: Ace Hardware Retail Commerce
-  - id: ace-hardware-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for Ace Hardware. Includes dedicated capacity, contractual SLAs,
-      security review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://www.acehardware.com
-          - https://www.acehardware-vendors.com/
-          - https://www.acehardware.com/
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://www.acehardware.com
-          - https://www.acehardware-vendors.com/
-          - https://www.acehardware.com/
-        unit: 1
-        price: custom
-        userMultiplied: false
-    elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Ace Hardware Affiliate Program
-      - name: Ace Hardware Vendor EDI Integration
-      - name: Ace Hardware Retail Commerce
+description: >-
+  Ace Hardware publishes NO API plans or pricing. There is no developer programme, no metered API
+  product, and no tiered access to any endpoint, because there is no public HTTP API. This file
+  records that measured zero.
+plan_count: 0
+plans: []
+note: >-
+  REPLACES A FABRICATED SCAFFOLD. Until 2026-08-30 this file carried three invented tiers (Free /
+  Professional / Enterprise) with invented quotas — 1,000 requests a month, 10 requests a minute,
+  100,000 on a "Professional" tier — written by the 2026-05-04 bulk sweep and marked
+  `method: generated`. None of those numbers exist anywhere in Ace Hardware's published material,
+  and Ace Hardware has no API to meter. The scaffold has been removed rather than carried forward.
+searched:
+  - url: https://www.acehardware.com/affiliates
+    status: 200
+    finding: >-
+      Affiliate programme page. Commission rate and cookie window are not published on the page;
+      it directs applicants to the Impact media-partner signup. No API pricing.
+  - url: https://www.acehardware.com/affiliate-faq
+    status: 200
+    finding: Affiliate FAQ. No API access, no plans, no pricing.
+  - url: https://www.acehardware-vendors.com/
+    status: 200
+    finding: >-
+      Vendor portal. EDI onboarding is a contractual trading-partner relationship, not a priced
+      plan. Vendors bear their own VAN/AS2 costs with their chosen EDI provider; Ace publishes no
+      fee schedule.
+  - url: https://www.acehardware.com/ace-trade-credit
+    status: 200
+    finding: >-
+      Net-30 commercial trade account for pros. A credit product, not an API plan.
+commercial_surfaces:
+  - name: Ace Rewards
+    type: free loyalty programme
+    url: https://www.acehardware.com/ace-rewards
+    priced_api: false
+  - name: Ace for Business (B2B)
+    type: bulk purchasing and trade pricing account
+    url: https://www.acehardware.com/b2b-home
+    priced_api: false
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

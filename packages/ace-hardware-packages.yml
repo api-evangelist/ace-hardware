@@ -1,0 +1,61 @@
+generated: '2026-08-30'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org, rubygems.org, https://www.acehardware.com/affiliates,
+  https://api.github.com/orgs/AceHardware
+provider: Ace Hardware
+providerId: ace-hardware
+description: >-
+  First-party client library search for Ace Hardware. Result: none exist. Ace Hardware publishes
+  no SDK on any package registry and no source repository containing one. NO `SDKs` pointer is
+  emitted from this file, because there is no official SDK to point at.
+package_count: 0
+official_count: 0
+packages: []
+searched:
+  - registry: npm
+    query: 'ace-hardware, acehardware'
+    endpoint: https://registry.npmjs.org/-/v1/search
+    status: 200
+    result: >-
+      No Ace Hardware package. Every match belongs to the unrelated Ace code editor family
+      (ace-builds, react-ace, ace-code, ace-diff, @adonisjs/ace) or to unrelated projects.
+    version: null
+    published: null
+  - registry: pypi
+    query: acehardware
+    endpoint: https://pypi.org/pypi/acehardware/json
+    status: 404
+    version: null
+    published: null
+  - registry: pypi
+    query: ace-hardware
+    endpoint: https://pypi.org/pypi/ace-hardware/json
+    status: 404
+    version: null
+    published: null
+  - registry: rubygems
+    query: acehardware
+    endpoint: https://rubygems.org/api/v1/gems/acehardware.json
+    status: 404
+    version: null
+    published: null
+  - registry: github
+    query: AceHardware organization
+    endpoint: https://api.github.com/orgs/AceHardware
+    status: 200
+    result: >-
+      A GitHub organization named `AceHardware` (id 80968995, created 2021-03-19) exists but has
+      ZERO public repositories, no description, no verified domain and one follower. It cannot be
+      confirmed to belong to Ace Hardware Corporation and contains nothing, so no
+      `GitHubOrganization` pointer is emitted for it.
+    version: null
+    published: null
+note: >-
+  The nearest thing to a client library in Ace Hardware's orbit belongs to somebody else: the
+  affiliate programme runs on Impact, whose SDKs are Impact's, and vendor EDI runs through
+  Logicbroker / SPS Commerce / Tradeshift, whose connectors are theirs. None of those is an Ace
+  Hardware package and none is recorded here as one.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
