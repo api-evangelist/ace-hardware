@@ -65,7 +65,6 @@ apis:
       Affiliates can link to the full Ace Hardware product catalog covering
       hardware, tools, paint, outdoor power, and home improvement.
     humanURL: https://www.acehardware.com/affiliates
-    baseURL: https://www.acehardware.com
     tags:
       - Affiliates
       - Commissions
@@ -133,7 +132,6 @@ apis:
       delivery. The platform integrates with local store inventory across
       thousands of independently owned Ace Hardware locations.
     humanURL: https://www.acehardware.com/
-    baseURL: https://www.acehardware.com/
     tags:
       - Retail
       - E-Commerce
