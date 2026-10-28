@@ -1,4 +1,4 @@
-# Ace Hardware (ace-hardware)
+# Ace Hardware
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,136 +66,145 @@
 
 Ace Hardware is a retailer-owned hardware cooperative operating thousands of independently owned stores worldwide that sell hardware, tools, paint, lawn and garden, and home improvement products. As a cooperative, Ace Hardware provides vendor integration through EDI standards and an affiliate program for digital publishers to earn commissions on online sales at acehardware.com.
 
-**URL:** [Visit APIs.json](https://raw.githubusercontent.com/api-evangelist/ace-hardware/refs/heads/main/apis.yml)
+**Areas:** Retail · Hardware · Home Improvement · Tools · Paint · Cooperative · EDI · Affiliates
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Ace Hardware on APIs.io
 
-## Tags:
+Everything profiled for Ace Hardware is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ace-hardware/](https://apis.io/providers/ace-hardware/)** — or go straight to one of the APIs or properties below.
 
- - Retail, Hardware, Home Improvement, Tools, Paint, Cooperative, EDI, Affiliate
+### APIs (3)
 
-## Timestamps
+- [Ace Hardware Affiliate Program](https://apis.io/apis/ace-hardware/affiliate-program/) — The Ace Hardware Affiliate Program allows digital publishers, bloggers, and content creators to earn commissions by referring customers to acehardware.com.…
+- [Ace Hardware Vendor EDI Integration](https://apis.io/apis/ace-hardware/vendor-edi/) — Ace Hardware requires all vendors to exchange electronic data using X12 EDI standards (version 4010) via AS2 connection through its vendor management portal…
+- [Ace Hardware Retail Commerce](https://apis.io/apis/ace-hardware/retail-commerce/) — Ace Hardware's online retail platform at acehardware.com offers customers the ability to shop for hardware, tools, paint, lawn and garden, and home…
 
-- **Created:** 2025-01-01
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Ace Hardware Affiliate Program
-The Ace Hardware Affiliate Program allows digital publishers, bloggers, and content creators to earn commissions by referring customers to acehardware.com. The program is managed through Impact's affiliate network and provides access to product links, banners, and promotional resources.
+#### JSON Schema (2)
 
-**Human URL:** [https://www.acehardware.com/affiliates](https://www.acehardware.com/affiliates)
+The data models the API reads and writes.
 
-#### Tags:
+- [AceHardwareAffiliateReferral](https://apis.io/schemas/ace-hardware/ace-hardware-affiliate-referral/)
+- [AceHardwareEdiPurchaseOrder](https://apis.io/schemas/ace-hardware/ace-hardware-edi-purchase-order/)
 
- - Affiliate, Commission, Publisher, Impact
+#### JSON Structure (2)
 
-#### Properties
+Data models expressed in JSON Structure.
 
-- [Documentation](https://www.acehardware.com/affiliates)
-- [Affiliate Program FAQ](https://www.acehardware.com/affiliate-faq)
-- [Affiliate Referral Schema](json-schema/ace-hardware-affiliate-referral-schema.json)
-- [Affiliate Referral Structure](json-structure/ace-hardware-affiliate-referral-structure.json)
-- [Affiliate Referral Example](examples/ace-hardware-affiliate-referral-example.json)
+- [Ace Hardware Affiliate Referral Structure](https://apis.io/json-structure/ace-hardware/ace-hardware-affiliate-referral-structure/)
+- [Ace Hardware Edi Purchase Order Structure](https://apis.io/json-structure/ace-hardware/ace-hardware-edi-purchase-order-structure/)
 
-### Ace Hardware Vendor EDI Integration
-Ace Hardware requires all vendors to exchange electronic data using X12 EDI standards (version 4010) via AS2 connection. Supported transaction sets include 850 (Purchase Order), 856 (Advanced Ship Notice), 810 (Invoice), 820 (Payment/Remittance), and 864 (Text Message).
+#### JSON-LD (1)
 
-**Human URL:** [https://www.acehardware-vendors.com/](https://www.acehardware-vendors.com/)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags:
+- [Ace Hardware Context](https://apis.io/jsonld/ace-hardware/ace-hardware-context/)
 
- - EDI, Vendor, Supply Chain, X12, AS2
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://www.acehardware-vendors.com/)
-- [Ace Hardware EDI Guide (Stedi Network)](https://www.stedi.com/edi/network/ace-hardware)
-- [Ace Hardware EDI via SPS Commerce](https://www.spscommerce.com/network/find-a-partner/view/ace-hardware/)
-- [EDI Purchase Order Schema](json-schema/ace-hardware-edi-purchase-order-schema.json)
-- [EDI Purchase Order Structure](json-structure/ace-hardware-edi-purchase-order-structure.json)
-- [EDI Purchase Order Example](examples/ace-hardware-edi-purchase-order-example.json)
+- [Ace Hardware Vocabulary](https://apis.io/vocabularies/ace-hardware/ace-hardware-vocabulary/)
 
-### Ace Hardware Retail Commerce
-Ace Hardware's online retail platform at acehardware.com offers customers the ability to shop for hardware, tools, paint, lawn and garden, and home improvement products with options for online ordering, store pickup, and delivery.
+#### Examples (2)
 
-**Human URL:** [https://www.acehardware.com/](https://www.acehardware.com/)
+Example requests and responses.
 
-#### Tags:
+- [Ace Hardware Affiliate Referral Example](https://apis.io/examples/ace-hardware/ace-hardware-affiliate-referral-example/)
+- [Ace Hardware Edi Purchase Order Example](https://apis.io/examples/ace-hardware/ace-hardware-edi-purchase-order-example/)
 
- - Retail, E-Commerce, Hardware, Home Improvement
+#### Governance rules (1)
 
-#### Properties
+Spectral rulesets for the provider's contracts.
 
-- [Documentation](https://www.acehardware.com/)
+- [Ace Hardware — jsonschema rules](https://apis.io/rules/ace-hardware/ace-hardware-jsonschema-spectral-rules/)
 
-## Common Properties
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Ace Hardware Authentication](https://apis.io/security/ace-hardware/ace-hardware-authentication/)
+- [Ace Hardware Domain Security](https://apis.io/security/ace-hardware/ace-hardware-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Ace Hardware Plans Pricing](https://apis.io/plans/ace-hardware/ace-hardware-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Ace Hardware Rate Limits](https://apis.io/rate-limits/ace-hardware/ace-hardware-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Ace Hardware Finops](https://apis.io/finops/ace-hardware/ace-hardware-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.acehardware.com)
-- [Portal](https://www.acehardware.com/)
-- [Privacy Policy](https://www.acehardware.com/privacy-policy)
-- [Terms of Service](https://www.acehardware.com/legal-notices)
-- [Ace Hardware JSON-LD Context](json-ld/ace-hardware-context.jsonld)
-- [Ace Hardware Vocabulary](vocabulary/ace-hardware-vocabulary.yaml)
+- [Support](https://www.acehardware.com/customer-service)
+- [Blog](https://www.acehardware.com/tips/)
+- [Terms of service](https://www.acehardware.com/customer-service?page=terms-of-use)
+- [Privacy policy](https://www.acehardware.com/privacy-policy)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Retailer-Owned Cooperative Model | Ace Hardware is owned by its member retailers, giving independent hardware store owners the purchasing power and brand recognition of a national chain while remaining locally owned. |
-| Affiliate Commission Program | Publishers earn commissions on referrals to acehardware.com, managed through the Impact affiliate network with access to product links and promotional banners. |
-| Vendor EDI Integration | Standardized X12 EDI (version 4010) via AS2 connection enables electronic purchase orders, invoices, ship notices, and payment remittance between Ace Hardware and its vendors. |
-| Local Store Inventory | Online shopping integrates with real-time local store inventory allowing buy online, pick up in store across thousands of locations. |
-| Vendor Scorecard | Ace Hardware maintains a vendor scorecard tracking supply chain compliance, on-time shipments, and EDI transaction accuracy. |
+**Kin Score 28.8** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 70.5 |
+| Contract quality | 10.7 |
+| Contract governance | 41.7 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 27.6 |
 
-| Name | Description |
-|------|-------------|
-| Affiliate Publisher Monetization | Bloggers, home improvement content creators, and comparison shopping sites earn commissions by linking to Ace Hardware product pages. |
-| Vendor Supply Chain Integration | Hardware and home improvement manufacturers integrate their ERP and order management systems with Ace Hardware's EDI infrastructure. |
-| Buy Online Pick Up In Store | Customers browse acehardware.com and reserve products for same-day pickup at their local independently owned Ace Hardware store. |
-| Drop Ship Vendor Programs | Vendors ship products directly to Ace Hardware customers, integrated through EDI transaction sets for orders and ship notices. |
+**Agent readiness 5.0** — human-only
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Impact Affiliate Network | Ace Hardware's affiliate program runs on the Impact platform, providing tracking, reporting, and commission management for affiliates. |
-| Logicbroker EDI Platform | Logicbroker serves as Ace Hardware's EDI integration platform for vendor onboarding, transaction monitoring, and compliance management. |
-| SPS Commerce | SPS Commerce provides pre-built EDI connections for vendors wanting to become Ace Hardware-compliant suppliers. |
-| RangeMe Vendor Discovery | Ace Hardware uses RangeMe for new vendor applications and product discovery by category buyers. |
-| Tradeshift | Tradeshift provides invoice and payment processing integration for Ace Hardware's AP automation workflows. |
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ace-hardware/](https://apis.io/providers/ace-hardware/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### JSON Schema
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Ace Hardware EDI Purchase Order Schema](json-schema/ace-hardware-edi-purchase-order-schema.json)
-- [Ace Hardware Affiliate Referral Schema](json-schema/ace-hardware-affiliate-referral-schema.json)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Ace Hardware: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-### JSON Structure
+## Open an issue
 
-- [Ace Hardware EDI Purchase Order Structure](json-structure/ace-hardware-edi-purchase-order-structure.json)
-- [Ace Hardware Affiliate Referral Structure](json-structure/ace-hardware-affiliate-referral-structure.json)
-
-### JSON-LD
-
-- [Ace Hardware Context](json-ld/ace-hardware-context.jsonld)
-
-### Examples
-
-- [Ace Hardware EDI Purchase Order Example](examples/ace-hardware-edi-purchase-order-example.json)
-- [Ace Hardware Affiliate Referral Example](examples/ace-hardware-affiliate-referral-example.json)
-
-## Vocabulary
-
-- [Ace Hardware Vocabulary](vocabulary/ace-hardware-vocabulary.yaml) — Unified taxonomy mapping 7 resources, 7 actions, 2 workflows, and 3 personas across Ace Hardware's retail and supply chain integration landscape
-
-## Maintainers
-
-**FN:** Kin Lane
-
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ace-hardware/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
