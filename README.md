@@ -158,18 +158,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 28.8** — thin · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 29.9** — thin · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
-| Discoverability | 70.5 |
+| Discoverability | 71.4 |
 | Contract quality | 10.7 |
 | Contract governance | 41.7 |
 | Operational transparency | 0.0 |
 | Developer ergonomics | 35.7 |
-| Access clarity | 27.6 |
+| Access clarity | 37.2 |
 
-**Agent readiness 5.0** — human-only
+**Agent readiness 4.9** — human-only
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -192,8 +192,14 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
 | Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
-**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+**Regulatory alignment 18.6** — Horizontal (data, software, accessibility, platform)
 
 The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ace-hardware/](https://apis.io/providers/ace-hardware/).
 
